@@ -29,7 +29,7 @@
 #
 # HISTORY
 #
-#	Version: 1.1
+#	Version: 1.0
 #
 # Created by Ryan Peterson Thursday Aug 9, 2018
 #
@@ -42,9 +42,9 @@ server=""
 username=""
 password=""
 eficode="" # 6 digits
-###############################
-#        Error Checking       #
-###############################
+################################
+# ERROR CHECKING DO NOT MODIFY #
+################################
 if [ "$4" != "" ] && [ "$server" == "" ]; then
   server=$4
 elif [ "$4" == "" ] && [ "$server" == "" ]; then
@@ -86,9 +86,9 @@ echo " Geo Coordinates are: $coordinates"
 echo ""
 
 #Get Mac's ID based off serialnumber
-id=$(curl -ksu $username:$password -H "accept: text/xml" $server/JSSResource/computers/serialnumber/$sn | xmllint --xpath "computer/general/id/text()" -)
+id=$(curl -ksu "$username":"$password" -H "accept: text/xml" $server/JSSResource/computers/serialnumber/$sn | xmllint --xpath "computer/general/id/text()" -)
 
 # Send lock command to computer
-curl -ksu $username:$password -H "content-type: text/xml" $server/JSSResource/computercommands/command/DeviceLock/passcode/$eficode/id/$id -X POST
+curl -ksu "$username":"$password" -H "content-type: text/xml" $server/JSSResource/computercommands/command/DeviceLock/passcode/$eficode/id/$id -X POST
 
 exit 0
