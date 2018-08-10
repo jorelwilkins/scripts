@@ -40,20 +40,31 @@ eficode="" # 6 digits
 ###############################
 #        Error Checking       #
 ###############################
-if [ -z "$server" ]; then
-  echo "\$server is null, please set a value. Exiting script."
+if [ "$4" != "" ] && [ "$server" == "" ]; then
+  server=$4
+elif [ "$4" == "" ] && [ "$server" == "" ]; then
+  echo "\$server is null, please enter a value. Exiting script"
   exit 1
 fi
-if [ -z "$username" ]; then
-  echo "\$username is null, please set a value. Exiting script."
+
+if [ "$5" != "" ] && [ "$username" == "" ]; then
+  username=$5
+elif [ "$5" == "" ] && [ "$username" == "" ]; then
+  echo "\$username is null, please enter a value. Exiting script"
   exit 1
 fi
-if [ -z "$password" ]; then
-  echo "\$password is null, please set a value. Exiting script."
+
+if [ "$6" != "" ] && [ "$password" == "" ]; then
+  password=$6
+elif [ "$6" == "" ] && [ "$password" == "" ]; then
+  echo "\$password is null, please enter a value. Exiting script"
   exit 1
 fi
-if [ -z "$eficode" ]; then
-  echo "\$eficode is null, please set a value. Exiting script."
+
+if [ "$7" != "" ] && [ "$eficode" == "" ]; then
+  eficode=$7
+elif [ "$7" == "" ] && [ "$eficode" == "" ]; then
+  echo "\$eficode is null, please enter a value. Exiting script"
   exit 1
 fi
 
@@ -63,20 +74,15 @@ fi
 
 #Store the mac's SN as a variable
 sn=$(system_profiler SPHardwareDataType | awk '/Serial Number/{print $4}')
-echo "Serial Number is: $serialnumber"
 
-# Get coordinates, region and postal code of machine. If machine is connected to VPN this is obscure results
+# Get coordinates of machine. If machine is connected to VPN this could obscure results.
 coordinates=`curl -s ipinfo.io | grep loc | awk '{print $2}'`
 echo "Geo Coordinates are: $coordinates"
-region=`curl -s ipinfo.io | grep region | awk '{print $2}'`
-echo "Region is: $region"
-postal=`curl -s ipinfo.io | grep postal | awk '{print $2}'`
-echo "Postal Code is: $postal"
 
 #Get Mac's ID based off serialnumber
 id=$(curl -ksu $username:$password -H "accept: text/xml" $server/JSSResource/computers/serialnumber/$sn | xmllint --xpath "computer/general/id/text()" -)
-echo "Mac ID is: $id"
 
 # Send lock command to computer
 curl -ksu $username:$password -H "content-type: text/xml" $server/JSSResource/computercommands/command/DeviceLock/passcode/$eficode/id/$id -X POST
+
 exit 0
