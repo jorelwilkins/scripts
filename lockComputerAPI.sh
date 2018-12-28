@@ -80,7 +80,7 @@ fi
 #Store the mac's SN as a variable
 sn=$(system_profiler SPHardwareDataType | awk '/Serial Number/{print $4}')
 
-# Get coordinates of machine. If machine is connected to VPN this could obscure results.
+# Get coordinates of location (roughly). If machine is connected to VPN this could obscure results.
 coordinates=`curl -s ipinfo.io | grep loc | awk '{print $2}'`
 echo " Geo Coordinates are: $coordinates"
 echo ""
