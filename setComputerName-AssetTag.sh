@@ -26,9 +26,9 @@
 # DEFINE VARIABLES & READ IN PARAMETERS
 #
 ####################################################################################################
-server="" #Jamf Pro Server URL
-username="" #Jamf Pro API Username
-password="" #Jamf Pro API Password
+server="$4" #Jamf Pro Server URL
+username="$5" #Jamf Pro API Username
+password="$6" #Jamf Pro API Password
 ####################################################################################################
 #Trim the trailing slash off if necessary
 if [ $(echo "${server: -1}") == "/" ]; then
