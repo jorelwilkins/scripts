@@ -64,7 +64,7 @@ fi
 serialNumber=$(ioreg -l | grep IOPlatformSerialNumber | awk '{print $4}' | tr -d \")
 echo "Serial Number is: $serialNumber"
 #Get the Asset Tag from Jamf Pro
-assetTag=$(curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/computers/serialnumber/"$serialNumber" | xmllint --xpath '/computer/general/asset_tag/text()' - )
+assetTag=$(curl -ksu "$username":"$password" -H "Accept: application/xml" "$server"/JSSResource/computers/serialnumber/"$serialNumber" | xmllint --xpath '/computer/general/asset_tag/text()' - )
 echo "Asset Tag is: $assetTag"
 # Set Computer Name
 /usr/sbin/scutil --set ComputerName "$assetTag"
