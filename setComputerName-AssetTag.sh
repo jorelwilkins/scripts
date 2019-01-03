@@ -30,11 +30,13 @@ server="$4" #Jamf Pro Server URL
 username="$5" #Jamf Pro API Username
 password="$6" #Jamf Pro API Password
 ####################################################################################################
+# Courtesy of github dot com slash iMatthewCM
 #Trim the trailing slash off if necessary
 if [ $(echo "${server: -1}") == "/" ]; then
 	jssURL=$(echo $server | sed 's/.$//')
 fi
 ####################################################################################################
+# Courtesy of github dot com slash zdorow
 echo "Testing connection to Jamf Pro..."
 test=$(curl --fail -ksu "$username":"$password" "$server"/JSSResource/users -X GET)
 status=$?
