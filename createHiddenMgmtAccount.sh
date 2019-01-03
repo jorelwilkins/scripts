@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Courtesy of github dot com slash kc9wwh
 ADMIN_USER="$4"
 ADMIN_PASS="$5"
 
