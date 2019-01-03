@@ -7,8 +7,9 @@
 # BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE
 # IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE
 # MAINTAIN THIS SCRIPT
+#
 ####################################################################################################
-
+#
 # DESCRIPTION
 #
 #	This script will delete (based on ID) a single Computer Configuration Profile in Jamf Pro
@@ -17,7 +18,6 @@
 # DEFINE VARIABLES & READ IN PARAMETERS
 #
 ####################################################################################################
-
 read -p "Jamf Pro URL: " server
 read -p "Jamf Pro Username: " username
 read -s -p "Jamf Pro Password: " password
