@@ -28,7 +28,7 @@ read -p "Computer Configuration Profile ID: " cid
 # SCRIPT CONTENTS - DO NOT MODIFY BELOW THIS LINE
 #
 ####################################################################################################
-
+# Courtesy of github dot com slash zdorow
 echo "Testing connection to Jamf Pro..."
 test=$(curl --fail -ksu "$username":"$password" "$server"/JSSResource/users -X GET)
 status=$?
@@ -54,5 +54,9 @@ else
     echo "Lets try this again."
     exit 99
 fi
-
+####################################################################################################
+#
+# MAIN PROCESS
+#
+####################################################################################################
 curl -ksu $username:$password -H "content-type: text/xml" $server/JSSResource/osxconfigurationprofiles/id/"$cid" -X DELETE
