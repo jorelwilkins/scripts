@@ -62,17 +62,17 @@ else
     echo "Lets try this again."
     exit 99
 fi
-#Get the Serial Number
+# Get the Serial Number
 serialNumber=$(ioreg -l | grep IOPlatformSerialNumber | awk '{print $4}' | tr -d \")
 echo "Serial Number is: $serialNumber"
-#Get the Asset Tag from Jamf Pro
+# Get the Asset Tag from Jamf Pro
 assetTag=$(curl -ksu "$username":"$password" -H "Accept: application/xml" "$server"/JSSResource/computers/serialnumber/"$serialNumber" | xmllint --xpath '/computer/general/asset_tag/text()' - )
 echo "Asset Tag is: $assetTag"
 # Set Computer Name
 /usr/sbin/scutil --set ComputerName "$assetTag"
-#Set Local Host Name
+# Set Local Host Name
 /usr/sbin/scutil --set LocalHostName "$assetTag"
-#Set Host Name
+# Set Host Name
 /usr/sbin/scutil --set HostName "$assetTag"
 # Set the computer name with jamf binary (uncomment below if necessary)
 # /usr/local/bin/jamf setComputerName -name "$assetTag"
