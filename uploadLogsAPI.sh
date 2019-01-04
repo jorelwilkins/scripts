@@ -1,4 +1,14 @@
 #!/bin/bash
+####################################################################################################
+#
+# THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
+# AS SUCH IT IS PROVIDED WITHOUT WARRANTY OR SUPPORT
+#
+# BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE
+# IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE
+# MAINTAIN THIS SCRIPT
+#
+####################################################################################################
 # This will upload jamf.log, system.log and install.log for machines that are in scope of a policy that runs this script
 # You can also specify a different log by uncommenting line 11 and entering the full file path
 ################################
