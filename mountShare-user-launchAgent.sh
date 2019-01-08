@@ -35,4 +35,8 @@ outputPlist="/Users/$loggedInUser/Library/LaunchAgents/com.smb.launchd.smbshare.
     <true/>
   </dict>
 </plist>' >> "$outputPlist"
+####################################################################################################
+/usr/sbin/chown -R root:wheel $outputPlist
+/bin/chmod 644 $outputPlist
 /bin/launchctl load -w "$outputPlist"
+
