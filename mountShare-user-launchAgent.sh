@@ -20,6 +20,23 @@ loggedInUser=$( python -c 'from SystemConfiguration import SCDynamicStoreCopyCon
 outputPlist="/Users/$loggedInUser/Library/LaunchAgents/com.smb.launchd.smbshare.plist"
 /bin/mkdir -p /Users/"$loggedInUser"/Library/LaunchAgents
 ####################################################################################################
+# Check to see if variables were passed in Jamf Pro
+if [ "$4" != "" ] && [ "$username" == "" ]; then
+  username=$4
+fi
+
+if [ "$5" != "" ] && [ "$password" == "" ]; then
+  password=$5
+fi
+
+if [ "$6" != "" ] && [ "$server" == "" ]; then
+  server=$6
+fi
+
+if [ "$7" != "" ] && [ "$share" == "" ]; then
+  share=$7
+fi
+####################################################################################################
 /bin/echo '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -39,4 +56,3 @@ outputPlist="/Users/$loggedInUser/Library/LaunchAgents/com.smb.launchd.smbshare.
 /usr/sbin/chown -R root:wheel $outputPlist
 /bin/chmod 644 $outputPlist
 /bin/launchctl load -w "$outputPlist"
-
