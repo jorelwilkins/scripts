@@ -61,4 +61,4 @@ fi
 # MAIN PROCESS
 #
 ####################################################################################################
-curl -ksu $username:$password -H "content-type: text/xml" $server/JSSResource/policies/id/"$pid" -X PUT -d "<policy><maintenance><recon>false</recon></maintenance></policy>"
+curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/policies/id/"$pid" -X PUT -d "<policy><maintenance><recon>false</recon></maintenance></policy>"
