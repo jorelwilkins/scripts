@@ -12,7 +12,7 @@
 ####################################################################################################
 #
 # DESCRIPTION
-# This script will read in parameters and remove the update inventory payload from a specified csv list
+# This script will read in parameters and remove the update inventory payload from a specified csv list of policy IDs
 #
 ####################################################################################################
 #
