@@ -11,8 +11,8 @@
 ####################################################################################################
 #
 # DESCRIPTION
-# This script can be used to gather a txt file of applications in /Applications and then upload it as an
-# attachment to the machine record via the Classic API. This is designed to be deployed via a policy to which you wish to gather
+# This script can be used to generate a txt file of applications in /Applications. Then upload it as an
+# attachment to the machine record via the Classic API. This is designed to be deployed via a policy to machines you wish to gather
 # that information from.
 #
 ####################################################################################################
