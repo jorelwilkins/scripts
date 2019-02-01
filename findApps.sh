@@ -38,7 +38,7 @@ id=$(curl -ksu "$username":"$password" -H "accept: text/xml" "$server"/JSSResour
 #Get the apps and store them as a text file
 ls  "/Applications" > "/Library/Application Support/JAMF/installedApps.txt"
 
-#Or use a for loop if so desired. Comment out line 21 and uncomment line below
+#Or use a for loop if so desired. Comment out line 39 and uncomment line below
 #for i in /Applications/*.app;do echo "$i" >> "/Library/Application Support/JAMF/installedApps.txt"; done
 
 #Give the Mac 4 seconds to create the above file
