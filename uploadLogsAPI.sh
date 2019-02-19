@@ -26,6 +26,6 @@ id=$(curl -ksu "$username":"$password" -H "accept: text/xml" "$server"/JSSResour
 # uncomment below if "$log" was specified in line 21. If you do not want the jamf.log, install.log or system.log, then comment out lines 29, 30 and 31
 # curl -sku "$username":"$password" "$server"/JSSResource/fileuploads/computers/id/$id -X POST -F "name=@$log"
 ################################
-curl -sku "$username":"$password" "$server"/JSSResource/fileuploads/computers/id/"$id" -X POST -F "name=@/private/var/log/jamf.log"
-curl -sku "$username":"$password" "$server"/JSSResource/fileuploads/computers/id/"$id" -X POST -F "name=@/private/var/log/install.log"
-curl -sku "$username":"$password" "$server"/JSSResource/fileuploads/computers/id/"$id" -X POST -F "name=@/private/var/log/system.log"
+curl -sku "$username":"$password" -H "accept: text/xml" "$server"/JSSResource/fileuploads/computers/id/"$id" -X POST -F "name=@/private/var/log/jamf.log"
+curl -sku "$username":"$password" -H "accept: text/xml" "$server"/JSSResource/fileuploads/computers/id/"$id" -X POST -F "name=@/private/var/log/install.log"
+curl -sku "$username":"$password" -H "accept: text/xml" "$server"/JSSResource/fileuploads/computers/id/"$id" -X POST -F "name=@/private/var/log/system.log"
