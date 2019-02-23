@@ -67,7 +67,7 @@ fi
 
 data="<mobile_device_command><general><command>EnableLostMode</command><lost_mode_message>"$lostModeMsg"</lost_mode_message><lost_mode_phone>"$lostModePhone"</lost_mode_phone></general><mobile_devices><mobile_device><id>${deviceID}</id></mobile_device></mobile_devices></mobile_device_command>"
 
-echo "Attempting to send a RestartDevice command to Mobile Device with ID: $deviceID"
+echo "Attempting to send a Lost Mode command to Mobile Device with ID: $deviceID"
 curl -ksu "$username:$password" -H "Content-Type: text/xml" "$server/JSSResource/mobiledevicecommands/command" -d $data -X POST
 
 exit 0
