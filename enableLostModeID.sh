@@ -64,10 +64,9 @@ fi
 # MAIN PROCESS
 #
 ####################################################################################################
-
-data="<mobile_device_command><general><command>EnableLostMode</command><lost_mode_message>"$lostModeMsg"</lost_mode_message><lost_mode_phone>"$lostModePhone"</lost_mode_phone></general><mobile_devices><mobile_device><id>${deviceID}</id></mobile_device></mobile_devices></mobile_device_command>"
+data="<mobile_device_command><general><lost_mode_message>"$lostModeMsg"</lost_mode_message><lost_mode_phone>"$lostModePhone"</lost_mode_phone><always_enforce_lost_mode>true</always_enforce_lost_mode><disallow_proximity_setup>true</disallow_proximity_setup><lost_mode_with_sound>false</lost_mode_with_sound></general><mobile_devices><mobile_device><id>${deviceID}</id></mobile_device></mobile_devices></mobile_device_command>"
 
 echo "Attempting to send a Lost Mode command to Mobile Device with ID: $deviceID"
-curl -ksu "$username:$password" -H "Content-Type: text/xml" "$server/JSSResource/mobiledevicecommands/command" -d $data -X POST
+curl -ksu "$username:$password" -H "content-type: application/xml" "$server/JSSResource/mobiledevicecommands/command/EnableLostMode" -d "$data" -X POST
 
 exit 0
