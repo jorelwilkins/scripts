@@ -11,7 +11,7 @@
 ####################################################################################################
 #
 # DESCRIPTION
-# This script will update a specified policy ID to set the execution frequency to "Once per computer"
+# This script will update a specified policy IDs (seperate by commma no spaces) to set the execution frequency to "Once per computer"
 #
 ####################################################################################################
 #
@@ -23,7 +23,7 @@ read -p "Jamf Pro URL: " server
 read -p "Jamf Pro Username: " username
 read -s -p "Jamf Pro Password: " password
 echo ""
-read -p "Policy ID: " pid
+read -p "Policy IDs (comma seperated no spaces): " pid
 
 
 ####################################################################################################
@@ -65,4 +65,4 @@ fi
 
 data="<policy><general><frequency>Once per computer</frequency></general></policy>"
 
-curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/policies/id/$pid -d "$data" -X PUT
+curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/policies/id/{$pid} -d "$data" -X PUT
