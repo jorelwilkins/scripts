@@ -33,7 +33,7 @@ deviceIDs=( $( curl -k -s -u "$jamfUser":"$jamfPass" $jamfProURL/JSSResource/mob
 
 for i in ${deviceIDs[@]}; do
     echo "Sending Restart Command to Device ID: $i..."
-    /usr/bin/curl -sk -u "$jamfUser":"$jamfPass" -H "Content-Type: text/xml" -d "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><mobile_device_command><general><command>RestartDevice</command>></general><mobile_devices><mobile_device><id>$i</id></mobile_device></mobile_devices></mobile_device_command>" $jamfProURL/JSSResource/mobiledevicecommands/command/EnableLostMode -X POST > /dev/null
+    /usr/bin/curl -sk -u "$jamfUser":"$jamfPass" -H "Content-Type: text/xml" -d "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><mobile_device_command><general><command>RestartDevice</command>></general><mobile_devices><mobile_device><id>$i</id></mobile_device></mobile_devices></mobile_device_command>" $jamfProURL/JSSResource/mobiledevicecommands/command/RestartDevice -X POST > /dev/null
     if [[ "$?" == "0" ]]; then
         echo "   Command Processed Successfully"
     else
