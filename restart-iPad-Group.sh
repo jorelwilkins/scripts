@@ -13,7 +13,7 @@
 #
 # DESCRIPTION
 # This script will send a command to restart ipad to desired mobile device group
-# Most credits go to github dot com slash kc9wwh 
+# Credits go to github dot com slash kc9wwh 
 ####################################################################################################
 #
 # DEFINE VARIABLES & READ IN PARAMETERS
