@@ -63,3 +63,4 @@ fi
 ####################################################################################################
 echo "Exporting Saved Search ID: $id to Desktop"
 curl -ksu $username:$password -H "content-type: text/xml" $server/JSSResource/advancedcomputersearches/id/$id | xmllint -format - > ~/Desktop/Saved-Search-$id.xml
+echo "Done!"
