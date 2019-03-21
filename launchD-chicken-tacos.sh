@@ -15,7 +15,7 @@
 # Make the LaunchAgents directory if does not exist
 mkdir -p /Library/LaunchDaemons
 
-outputPlist="/Library/LaunchAgents/com.sunnyvale.chickentacos.plist"
+outputPlist="/Library/LaunchDaemons/com.sunnyvale.chickentacos.plist"
 
 /bin/cat > "$outputPlist" <<EOF
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
