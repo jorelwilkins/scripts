@@ -41,7 +41,7 @@ fi
     <string>com.smb.launchd.smbshare</string>
     <key>ProgramArguments</key>
     <array>
-      <string>open</string>
+      <string>/usr/bin/open</string>
       <string>smb://'$username':'$password'@'$server'/'$share'</string>
     </array>
     <key>RunAtLoad</key>
