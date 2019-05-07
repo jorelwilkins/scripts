@@ -1,4 +1,15 @@
-#!/bin/sh
+#!/bin/bash
+
+####################################################################################################
+#
+# THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
+# AS SUCH IT IS PROVIDED WITHOUT WARRANTY OR SUPPORT
+#
+# BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE
+# IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE
+# MAINTAIN THIS SCRIPT
+#
+####################################################################################################
 
 # Source: https://www.jamf.com/jamf-nation/discussions/26912/script-to-rename-computer-name-letter-of-first-name-and-last-name#responseChild159772
 
