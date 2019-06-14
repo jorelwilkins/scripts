@@ -11,7 +11,7 @@
 ####################################################################################################
 #
 # DESCRIPTION
-#  This script will send assign a mobile deivce(s) to a specified Site by it's name
+#  This script will assign a mobile deivce(s) to a specified Site by it's name
 #
 ####################################################################################################
 #
