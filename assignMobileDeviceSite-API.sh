@@ -62,4 +62,4 @@ fi
 # MAIN PROCESS
 #
 ####################################################################################################
-curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/mobiledevices/id/{$mid} -X PUT -d "<mobile_device><general><site><name>"$site"</name></site></general></mobile_device>"
+curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/mobiledevices/id/{$mid} -X PUT -d "<mobile_device><general><site><name>$site</name></site></general></mobile_device>"
