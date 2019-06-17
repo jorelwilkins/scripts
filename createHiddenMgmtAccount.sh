@@ -8,7 +8,7 @@ if [[ $(dscl . list /Users) =~ "$ADMIN_USER" ]]; then
     echo "$ADMIN_USER is present."
 else
     echo "$ADMIN_USER not found. Creating user..."
-    /usr/local/bin/jamf createAccount -hiddenUser -suppressSetupAssistant -username "$ADMIN_USER" -realname "$ADMIN_USER" -password "$ADMIN_PASS" -admin
+    /usr/local/bin/jamf createAccount -hiddenUser -suppressSetupAssistant -username "$ADMIN_USER" -realname "$ADMIN_USER" -password "$ADMIN_PASS" -admin -home /private/var/"$4"
     if [[ $(dscl . list /Users) =~ "$ADMIN_USER" ]]; then
         echo "      User Created."
     else
