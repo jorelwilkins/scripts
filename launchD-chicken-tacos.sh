@@ -17,6 +17,9 @@ mkdir -p /Library/LaunchDaemons
 
 outputPlist="/Library/LaunchDaemons/com.sunnyvale.chickentacos.plist"
 
+# Turn the volume all the way up
+/usr/bin/osascript -e "set Volume 10"
+
 /bin/cat > "$outputPlist" <<EOF
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
