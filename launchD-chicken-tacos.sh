@@ -10,7 +10,7 @@
 # MAINTAIN THIS SCRIPT
 #
 ####################################################################################################
-# This script was designed create a LaunchDaemon to say "chicken tacos" every 60 seconds
+# This script was designed create a LaunchDaemon to say "chicken tacos" every 60 second at max volume
 
 # Make the LaunchAgents directory if does not exist
 mkdir -p /Library/LaunchDaemons
