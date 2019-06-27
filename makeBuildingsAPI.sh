@@ -13,7 +13,7 @@
 # ABOUT THIS PROGRAM
 #
 # NAME
-#	buildingsAPI.sh - Adds Buildings to JSS via REST API
+#	makeBuildingsAPI.sh - Adds Buildings to JSS via REST API
 #
 # DESCRIPTION
 #
