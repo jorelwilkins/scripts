@@ -49,9 +49,6 @@ read -p "Please drag and drop the CSV file into this window and hit enter: " fil
 #Building name we want to appear in the JSS. This variable will continually be rewritten once we get to the FOR loop
 buildName=""
 
-#Using 0 will use the next available ID. This is useful for creating NEW things, since you don't have to worry about overwriting something else
-buildID=0
-
 #Read in the file
 IFS=$'\n' read -d '' -r -a lines < $filePath
 
