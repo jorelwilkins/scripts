@@ -1,6 +1,4 @@
 #!/bin/bash
-
-#!/bin/bash
 ####################################################################################################
 #
 # THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
@@ -17,6 +15,11 @@
 # NAME
 #	prompt-setComputerName-AssetTag.sh - Prompts for the asset tag, set asset tag in Jamf Pro
 #	then names computer to Asset Tag.
+####################################################################################################
+# 
+# REQUIREMENTS
+# The Jamf-Apple-Events PPPC Profile needs to be installed for this to work
+# https://github.com/jamf/JamfPrivacyPreferencePolicyControlProfiles/blob/master/JamfAppleEvents.mobileconfig
 #
 ####################################################################################################
 #
