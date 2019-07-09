@@ -22,7 +22,7 @@ file4="~/.my.cnf"
 file5="/etc/mysql/my.cnf"
 
 read -p "Is Tomcat stopped? [y / n]: " tomcat
-if [[ $tomcat != 'y' ]]; then
+if [[ $tomcat != 'y' || 'Y' ]]; then
   echo "Stopping Tomcat!"
   /bin/launchctl unload /Library/LaunchDaemons/com.jamfsoftware.tomcat.plist
 else
