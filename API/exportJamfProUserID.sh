@@ -63,5 +63,5 @@ fi
 ####################################################################################################
 loggedInUser=$( python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");' )
 echo "Exporting Jamf Pro User ID: $id to Desktop"
-curl -ksu $username:$password -H "content-type: text/xml" $server/JSSResource/accounts/userid/$id | xmllint -format - > /Users/"$loggedInUser"/Desktop/Jamf-Pro-User-$id.xml
+curl -ksu $username:$password -H "accept: text/xml" $server/JSSResource/accounts/userid/$id | xmllint -format - > /Users/"$loggedInUser"/Desktop/Jamf-Pro-User-$id.xml
 echo "Done!"
