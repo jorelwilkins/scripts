@@ -17,7 +17,8 @@
 # DEFINE VARIABLES & READ IN PARAMETERS
 #
 ####################################################################################################
-echo "This is a self destruct stript. Please ensure you have a database backup."
+echo "This is a self destruct stript that will dele all classes."
+echo "Please ensure you have a database backup."
 echo "There is no magic undo button other than restoring to a backup when the classes were in existance."
 read -p "Are you sure you want to continue? [ y | n ]  " answer
 if [[ $answer != 'y' ]]; then
