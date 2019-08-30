@@ -17,6 +17,9 @@
 # DEFINE VARIABLES & READ IN PARAMETERS
 #
 ####################################################################################################
+echo "#####################"
+echo "###!!! WARNING !!!###"
+echo "#####################"
 echo "This is a self destruct stript that will delete all classes."
 echo "Please ensure you have a database backup."
 echo "There is no magic undo button other than restoring to a backup when the classes were in existance."
@@ -35,7 +38,8 @@ echo ""
 # DO NOT MODIFY BELOW THIS LINE
 #
 ####################################################################################################
-
+echo ""
+echo "Deleting all classes now!"
 classID=$(curl -ksu $username:$password -H "accept: text/xml" $server/JSSResource/classes | xmllint --format - | awk -F '[<>]' '/id/{print $3}')
 for class in $classID;do
 	curl -ksu $username:$password -H "Content-type: text/xml" $server/JSSResource/classes/id/$class -X DELETE
