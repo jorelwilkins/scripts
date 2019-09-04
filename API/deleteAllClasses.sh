@@ -37,6 +37,11 @@ echo ""
 # SCRIPT CONTENTS - DO NOT MODIFY BELOW THIS LINE
 #
 ####################################################################################################
+
+#Trim the trailing slash off if necessary
+if [ $(echo "${server: -1}") == "/" ]; then
+	server=$(echo $server | sed 's/.$//')
+fi
 # Courtesy of github dot com slash zdorow
 echo "Testing connection to Jamf Pro..."
 test=$(curl --fail -ksu "$username":"$password" "$server"/JSSResource/users -X GET)
