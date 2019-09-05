@@ -28,9 +28,9 @@ if [[ $answer != 'y' ]]; then
 	echo "Exiting script!"
 	exit 1
 fi
-read -p "JSS URL: " server
-read -p "JSS Username: " username
-read -s -p "JSS Password: " password
+read -p "Jamf Pro URL: " server
+read -p "Jamf Pro Username: " username
+read -s -p "Jamf Pro Password: " password
 echo ""
 ####################################################################################################
 #
