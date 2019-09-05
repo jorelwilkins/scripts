@@ -38,7 +38,7 @@ echo ""
 #
 ####################################################################################################
 
-#Trim the trailing slash off if necessary courtest if iMatthewCM on GitHub
+#Trim the trailing slash off if necessary, courtesy of github dot com slash iMatthewCM 
 if [ $(echo "${server: -1}") == "/" ]; then
 	server=$(echo $server | sed 's/.$//')
 fi
