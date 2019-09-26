@@ -11,7 +11,7 @@
 ####################################################################################################
 #
 # DESCRIPTION
-# This is a self descrtuct script that will delete all classes in Jamf Pro.
+# This is a self destruct script that will delete all classes in Jamf Pro.
 # Requires a user that has READ and DELETE privys for Classes
 ####################################################################################################
 #
