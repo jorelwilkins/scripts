@@ -12,6 +12,7 @@
 #
 # DESCRIPTION
 # This is a self descrtuct script that will delete all classes in Jamf Pro.
+# Requires a user that has READ and DELETE privys for Classes
 ####################################################################################################
 #
 # DEFINE VARIABLES & READ IN PARAMETERS
@@ -38,37 +39,11 @@ echo ""
 #
 ####################################################################################################
 
-#Trim the trailing slash off if necessary, courtesy of github dot com slash iMatthewCM 
+#Trim the trailing slash off if necessary courtesy of github dot com slash iMatthewCM
 if [ $(echo "${server: -1}") == "/" ]; then
 	server=$(echo $server | sed 's/.$//')
 fi
-# Courtesy of github dot com slash zdorow
-echo "Testing connection to Jamf Pro..."
-test=$(curl --fail -ksu "$username":"$password" "$server"/JSSResource/users -X GET)
-status=$?
-if [ $status -eq 6 ]; then
-	echo ""
-	echo "The Jamf Pro URL is incorrect. Please edit the URL and try again."
-	echo "If the error persists please check permissions and internet connection"
-	echo ""
-	exit 99
-elif [ $status -eq 22 ]; then
-	echo ""
-	echo "Username and/or password is incorrect. Please edit and try again."
-	echo "If the error persists please check permissions and internet connection"
-	echo ""
-	exit 99
-elif [ $status -eq 0 ]; then
-    echo ""
-    echo "Connection test successful! "
-    echo ""
-else
-    echo ""
-    echo "Something went really wrong,"
-    echo "Lets try this again."
-    exit 99
-fi
-echo ""
+
 echo "Deleting all classes now!"
 classID=$(curl -ksu $username:$password -H "accept: text/xml" $server/JSSResource/classes | xmllint --format - | awk -F '[<>]' '/id/{print $3}')
 for class in $classID;do
