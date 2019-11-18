@@ -24,7 +24,7 @@ read -p "Jamf Pro URL: " server
 read -p "Jamf Pro Username: " username
 read -s -p "Jamf Pro Password: " password
 echo ""
-read "Package Name (including file extension)": packageName				#Name of the package (including file extension)
+read -p "Package Name (including file extension)": packageName				#Name of the package (including file extension)
 ####################################################################################################
 #
 # SCRIPT CONTENTS - DO NOT MODIFY BELOW THIS LINE
